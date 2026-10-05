@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CocheJusto – ¿Te están cobrando de más en el taller?</title>
+  <meta name="description" content="Comprueba si el presupuesto de tu taller es justo o consulta cuánto cuesta una reparación. Gratis y sin registro." />
+  <meta name="keywords" content="presupuesto taller caro, precio cambio embrague, reparación coche cara, taller justo precio, cuanto cuesta reparar coche" />
+  <meta name="google-site-verification" content="xGx1861I1_Z3Akm8WP4ebzHr_H90epr9wRbqRS8rJ_w" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CocheJusto",
+    "url": "https://cochejusto.es",
+    "description": "Herramienta gratuita para analizar presupuestos de taller y conocer precios de reparaciones de coches en España",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://cochejusto.es/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CocheJusto",
+    "url": "https://cochejusto.es",
+    "description": "Tu asesor de taller independiente. Analiza presupuestos y consulta precios de reparaciones en España.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "url": "https://cochejusto.es/contacto/"
+    }
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1748903089672812" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f1117;
+      --surface:   #181c27;
+      --border:    #252a38;
+      --text:      #e8eaf0;
+      --muted:     #7a8099;
+      --accent:    #f5a623;
+      --accent-dk: #c4831a;
+      --green:     #22c55e;
+      --orange:    #f59e0b;
+      --red:       #ef4444;
+      --radius:    12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(15,17,23,.92);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -.5px;
+    }
+    .logo span { color: var(--accent); }
+    nav p { font-size: .8rem; color: var(--muted); }
+
+    /* ── AD BANNER TOP ── */
+    .ad-top {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: .6rem;
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 680px;
+      margin: 5rem auto 0;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245,166,35,.12);
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 500;
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(245,166,35,.25);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+    }
+    .btn-hero {
+      display: inline-block;
+      background: var(--accent);
+      color: #0f1117;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: .85rem 2.2rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .btn-hero:hover { background: var(--accent-dk); }
+
+    /* ── STATS ── */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin: 4rem auto;
+      max-width: 680px;
+      padding: 0 1.5rem;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat strong {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .stat span { font-size: .85rem; color: var(--muted); }
+
+    /* ── TOOL WRAPPER ── */
+    .tool-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2rem;
+      max-width: 1060px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+      align-items: start;
+    }
+    @media (max-width: 820px) {
+      .tool-wrapper { grid-template-columns: 1fr; }
+      .ad-side { display: none; }
+    }
+
+    /* ── TABS ── */
+    .tabs {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 2rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .35rem;
+    }
+    .tab-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      font-size: .88rem;
+      font-weight: 500;
+      padding: .65rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+      text-align: center;
+    }
+    .tab-btn.active {
+      background: var(--accent);
+      color: #0f1117;
+      font-weight: 600;
+    }
+
+    .tool-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2.5rem;
+    }
+    .tool-card h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: .4rem;
+    }
+    .tool-card > p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 2rem;
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    label {
+      display: block;
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: .4rem;
+      margin-top: 1.25rem;
+    }
+    label:first-of-type { margin-top: 0; }
+
+    select, input[type="number"], input[type="text"] {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: .95rem;
+      font-family: 'Inter', sans-serif;
+      padding: .75rem 1rem;
+      appearance: none;
+      outline: none;
+      transition: border-color .15s;
+    }
+    select:focus, input:focus { border-color: var(--accent); }
+
+    .price-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .btn-analyze {
+      width: 100%;
+      margin-top: 1.75rem;
+      background: var(--accent);
+      color: #0f1117;
+      border: none;
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: .9rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .btn-analyze:hover { background: var(--accent-dk); }
+
+    /* ── RESULT ── */
+    .result-box { display: none; margin-top: 2rem; }
+    .result-box.visible { display: block; }
+
+    .result-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin-bottom: 1.75rem;
+    }
+
+    .semaforo {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+    .semaforo-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--border);
+      flex-shrink: 0;
+      margin-top: 6px;
+      transition: background .3s;
+    }
+    .semaforo-dot.active-green  { background: var(--green);  box-shadow: 0 0 10px rgba(34,197,94,.5); }
+    .semaforo-dot.active-orange { background: var(--orange); box-shadow: 0 0 10px rgba(245,158,11,.5); }
+    .semaforo-dot.active-red    { background: var(--red);    box-shadow: 0 0 10px rgba(239,68,68,.5); }
+
+    .result-verdict {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    .result-verdict.green  { color: var(--green); }
+    .result-verdict.orange { color: var(--orange); }
+    .result-verdict.red    { color: var(--red); }
+
+    .result-body { color: var(--muted); font-size: .92rem; line-height: 1.7; }
+
+    .range-bar-wrap { margin: 1.25rem 0; }
+    .range-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: .75rem;
+      color: var(--muted);
+      margin-bottom: .35rem;
+    }
+    .range-bar {
+      height: 8px;
+      border-radius: 999px;
+      background: var(--border);
+      position: relative;
+    }
+    .range-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--green), var(--orange));
+      width: 0;
+      transition: width .6s cubic-bezier(.4,0,.2,1);
+    }
+    .range-marker {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid var(--accent);
+      transition: left .6s cubic-bezier(.4,0,.2,1);
+      z-index: 2;
+    }
+
+    /* precio idea result */
+    .precio-idea-result {
+      display: none;
+      margin-top: 2rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .precio-idea-result.visible { display: block; }
+    .precio-rango {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: .35rem;
+    }
+    .precio-rango span { font-size: 1rem; color: var(--muted); font-family: 'Inter', sans-serif; font-weight: 400; }
+    .precio-detalle { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+    .ad-result {
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      font-size: .75rem;
+      color: var(--muted);
+      margin-top: 1.5rem;
+    }
+
+    /* ── SIDEBAR AD ── */
+    .ad-side {
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: .75rem;
+      color: var(--muted);
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── FAQ ── */
+    .seo-section {
+      max-width: 720px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+    }
+    .seo-section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .faq-item { border-top: 1px solid var(--border); padding: 1.2rem 0; }
+    .faq-item h3 { font-size: .95rem; font-weight: 600; margin-bottom: .4rem; }
+    .faq-item p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: .78rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<div class="ad-top">Espacio publicitario</div>
+
+<nav>
+  <a href="#" class="logo">Coche<span>Justo</span></a>
+  <p>Tu asesor de taller independiente</p>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Gratis · Sin registro</div>
+  <h1>¿Te están cobrando<br>de más en el <em>taller</em>?</h1>
+  <p>Analiza tu presupuesto o consulta cuánto debería costarte una reparación. Sin rodeos.</p>
+  <a href="#herramienta" class="btn-hero">Comprueba ahora</a>
+</section>
+
+<div class="stats">
+  <div class="stat"><strong>+40%</strong><span>de presupuestos son elevados</span></div>
+  <div class="stat"><strong>300€</strong><span>ahorro medio detectado</span></div>
+  <div class="stat"><strong>gratis</strong><span>sin registro, sin trampa</span></div>
+</div>
+
+<div class="tool-wrapper" id="herramienta">
+  <div class="tool-card">
+    <h2>Analiza tu reparación</h2>
+    <p>Elige qué quieres saber y te damos una respuesta clara.</p>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('presupuesto', this)">💰 Tengo un presupuesto</button>
+      <button class="tab-btn" onclick="switchTab('idea', this)">🔍 Quiero saber el precio</button>
+    </div>
+
+    <!-- TAB 1: PRESUPUESTO -->
+    <div class="tab-panel active" id="tab-presupuesto">
+      <label for="tipo1">Tipo de reparación</label>
+      <select id="tipo1">
+        <option value="">Selecciona una reparación…</option>
+        <optgroup label="Motor y transmisión">
+          <option value="embrague">Cambio de embrague</option>
+          <option value="distribucion">Correa / cadena de distribución</option>
+          <option value="aceite">Cambio de aceite + filtro</option>
+          <option value="turbo">Reparación de turbo</option>
+          <option value="culata">Rectificación de culata</option>
+        </optgroup>
+        <optgroup label="Frenos y suspensión">
+          <option value="frenos_delanteros">Frenos delanteros (pastillas + discos)</option>
+          <option value="frenos_traseros">Frenos traseros (pastillas + discos)</option>
+          <option value="amortiguadores">Amortiguadores (par)</option>
+          <option value="neumaticos">Neumáticos (4 unidades montados)</option>
+        </optgroup>
+        <optgroup label="Eléctrico y otros">
+          <option value="bateria">Batería</option>
+          <option value="alternador">Alternador</option>
+          <option value="diagnostico">Diagnóstico electrónico</option>
+          <option value="aire">Recarga aire acondicionado</option>
+          <option value="itv">Preparación ITV</option>
+        </optgroup>
+      </select>
+
+      <label for="marca1">Marca del coche <span style="color:var(--muted);font-weight:400">(opcional)</span></label>
+      <input type="text" id="marca1" placeholder="Ej: BMW, Seat, Ford, Renault…" />
+
+      <label>Precio del presupuesto (€)</label>
+      <div class="price-row">
+        <input type="number" id="precio1" placeholder="Ej: 850" min="0" />
+        <select id="iva1">
+          <option value="si">IVA incluido</option>
+          <option value="no">Sin IVA</option>
+        </select>
+      </div>
+
+      <button class="btn-analyze" onclick="analizarPresupuesto()">Analizar presupuesto →</button>
+
+      <div class="result-box" id="result1">
+        <hr class="result-divider" />
+        <div class="semaforo">
+          <div class="semaforo-dot" id="dot1"></div>
+          <div id="verdict1" class="result-verdict"></div>
+        </div>
+        <div class="range-bar-wrap">
+          <div class="range-labels">
+            <span id="lmin1"></span>
+            <span id="lmax1"></span>
+          </div>
+          <div class="range-bar">
+            <div class="range-fill" id="rfill1"></div>
+            <div class="range-marker" id="rmark1" style="left:50%"></div>
+          </div>
+          <div style="text-align:center;margin-top:.5rem;font-size:.78rem;color:var(--muted)">Tu presupuesto en el rango habitual</div>
+        </div>
+        <p class="result-body" id="rbody1"></p>
+        <div class="ad-result">Espacio publicitario · Anúnciate aquí</div>
+      </div>
+    </div>
+
+    <!-- TAB 2: IDEA DE PRECIO -->
+    <div class="tab-panel" id="tab-idea">
+      <label for="tipo2">¿Qué reparación necesitas?</label>
+      <select id="tipo2">
+        <option value="">Selecciona una reparación…</option>
+        <optgroup label="Motor y transmisión">
+          <option value="embrague">Cambio de embrague</option>
+          <option value="distribucion">Correa / cadena de distribución</option>
+          <option value="aceite">Cambio de aceite + filtro</option>
+          <option value="turbo">Reparación de turbo</option>
+          <option value="culata">Rectificación de culata</option>
+        </optgroup>
+        <optgroup label="Frenos y suspensión">
+          <option value="frenos_delanteros">Frenos delanteros (pastillas + discos)</option>
+          <option value="frenos_traseros">Frenos traseros (pastillas + discos)</option>
+          <option value="amortiguadores">Amortiguadores (par)</option>
+          <option value="neumaticos">Neumáticos (4 unidades montados)</option>
+        </optgroup>
+        <optgroup label="Eléctrico y otros">
+          <option value="bateria">Batería</option>
+          <option value="alternador">Alternador</option>
+          <option value="diagnostico">Diagnóstico electrónico</option>
+          <option value="aire">Recarga aire acondicionado</option>
+          <option value="itv">Preparación ITV</option>
+        </optgroup>
+      </select>
+
+      <label for="marca2">Marca del coche <span style="color:var(--muted);font-weight:400">(opcional)</span></label>
+      <input type="text" id="marca2" placeholder="Ej: BMW, Seat, Ford, Renault…" />
+
+      <button class="btn-analyze" onclick="analizarIdea()">Ver precio estimado →</button>
+
+      <div class="precio-idea-result" id="result2">
+        <hr class="result-divider" />
+        <div class="precio-rango" id="rango2"></div>
+        <p class="precio-detalle" id="detalle2"></p>
+        <div class="ad-result">Espacio publicitario · Anúnciate aquí</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ad-side">
+    <p>Espacio publicitario<br><span style="font-size:.7rem">300 × 250</span></p>
+  </div>
+</div>
+
+<!-- REPARACIONES GRID -->
+<section style="max-width:1060px;margin:0 auto 4rem;padding:0 1.5rem">
+  <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.5rem">Precios de reparaciones habituales</h2>
+  <p style="color:var(--muted);font-size:.88rem;margin-bottom:1.5rem">Más de 25 reparaciones analizadas · Precios orientativos para el mercado español 2026</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">
+    <a href="/precio-cambio-embrague/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🔧</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Cambio de embrague</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">600€ – 1.200€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-frenos/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🛑</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Cambio de frenos</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">150€ – 400€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-correa-distribucion/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">⚙️</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Correa de distribución</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">350€ – 900€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-bateria/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🔋</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Cambio de batería</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">80€ – 220€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-diagnostico-coche/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🔍</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Diagnóstico electrónico</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">30€ – 80€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-aceite/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🛢️</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Cambio de aceite</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">40€ – 120€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-amortiguadores/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🚗</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Amortiguadores</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">180€ – 500€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-neumaticos/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🏎️</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Neumáticos (4 ud.)</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">250€ – 700€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-turbo/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">💨</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Reparación turbo</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">800€ – 2.500€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-alternador/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">⚡</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Alternador</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">250€ – 600€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-recarga-aire-acondicionado/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">❄️</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Aire acondicionado</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">60€ – 150€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-bujias/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🔥</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Cambio de bujías</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">60€ – 200€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-filtro-habitaculo/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🌬️</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Filtro de habitáculo</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">20€ – 60€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-liquido-frenos/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">💧</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Líquido de frenos</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">40€ – 90€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-direccion/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🎯</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Dirección asistida</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">300€ – 900€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-cadena-distribucion/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">⛓️</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Cadena distribución</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">400€ – 1.200€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-reparacion-caja-cambios/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🔩</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Caja de cambios</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">500€ – 2.500€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-catalizador/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">💨</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Catalizador</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">300€ – 1.200€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-bomba-agua/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">💦</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Bomba de agua</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">150€ – 500€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-sensor-lambda/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">📡</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Sensor lambda</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">100€ – 350€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-pintura-coche/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🎨</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Pintura coche</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">300€ – 3.000€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-alineacion-equilibrado/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🎯</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Alineación y equilibrado</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">40€ – 100€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-revision-coche/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🔎</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Revisión del coche</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">80€ – 300€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-retenes-motor/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🛠️</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Retenes del motor</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">150€ – 600€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+    <a href="/precio-cambio-aceite-caja-cambios/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;display:block">
+      <div style="font-size:1.5rem;margin-bottom:.5rem">🛢️</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.3rem">Aceite caja cambios</div>
+      <div style="font-size:.82rem;color:var(--accent);font-weight:600">80€ – 250€</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.3rem">Ver precio estimado →</div>
+    </a>
+  </div>
+</section>
+
+<!-- ARTICULOS -->
+<section style="max-width:1060px;margin:0 auto 4rem;padding:0 1.5rem">
+  <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.5rem">Guías y consejos</h2>
+  <p style="color:var(--muted);font-size:.88rem;margin-bottom:1.5rem">Todo lo que necesitas saber para tomar mejores decisiones con tu coche</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem">
+    <a href="/cuanto-cuesta-mantener-un-coche/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;text-decoration:none;display:block">
+      <div style="font-size:1.4rem;margin-bottom:.75rem">💰</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.4rem;line-height:1.3">¿Cuánto cuesta mantener un coche al año?</div>
+      <div style="font-size:.82rem;color:var(--muted);line-height:1.5">Desglose completo de todos los gastos reales: combustible, seguro, mantenimiento y más.</div>
+      <div style="font-size:.78rem;color:var(--accent);margin-top:.75rem;font-weight:600">Leer guía →</div>
+    </a>
+    <a href="/reparaciones-mas-caras-coche/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;text-decoration:none;display:block">
+      <div style="font-size:1.4rem;margin-bottom:.75rem">⚠️</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.4rem;line-height:1.3">Las 10 reparaciones más caras del coche</div>
+      <div style="font-size:.82rem;color:var(--muted);line-height:1.5">Conoce cuáles son las averías que más duelen al bolsillo y cuánto deberías pagar.</div>
+      <div style="font-size:.78rem;color:var(--accent);margin-top:.75rem;font-weight:600">Leer guía →</div>
+    </a>
+    <a href="/como-saber-si-me-estafan-en-el-taller/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;text-decoration:none;display:block">
+      <div style="font-size:1.4rem;margin-bottom:.75rem">🚨</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.4rem;line-height:1.3">¿Cómo saber si me estafan en el taller?</div>
+      <div style="font-size:.82rem;color:var(--muted);line-height:1.5">8 señales de alerta y cómo protegerte antes de aceptar cualquier presupuesto.</div>
+      <div style="font-size:.78rem;color:var(--accent);margin-top:.75rem;font-weight:600">Leer guía →</div>
+    </a>
+    <a href="/cuando-compensa-reparar-o-cambiar-coche/" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;text-decoration:none;display:block">
+      <div style="font-size:1.4rem;margin-bottom:.75rem">🔄</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text);margin-bottom:.4rem;line-height:1.3">¿Cuándo compensa reparar o cambiar el coche?</div>
+      <div style="font-size:.82rem;color:var(--muted);line-height:1.5">La regla del 50% y ejemplos reales para tomar la decisión correcta.</div>
+      <div style="font-size:.78rem;color:var(--accent);margin-top:.75rem;font-weight:600">Leer guía →</div>
+    </a>
+  </div>
+</section>
+
+<!-- FAQ SEO -->
+<section class="seo-section">
+  <h2>Preguntas frecuentes sobre precios de taller</h2>
+  <div class="faq-item">
+    <h3>¿Cuánto cuesta cambiar el embrague en España?</h3>
+    <p>El precio medio de cambiar el embrague en España oscila entre 600€ y 1.200€ con piezas incluidas. Puede variar según la marca del coche, la zona geográfica y si se usan piezas originales o de recambio.</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Cómo sé si un presupuesto de taller es caro?</h3>
+    <p>Compara el precio con el rango habitual para esa reparación y tu tipo de vehículo. Si supera el límite superior más de un 20%, pide una segunda opinión en otro taller.</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Cuánto cuesta cambiar la correa de distribución?</h3>
+    <p>La correa de distribución tiene un coste habitual de entre 350€ y 900€ dependiendo del modelo. Los coches con cadena de distribución son generalmente más caros de reparar si esta falla.</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Me pueden cobrar por el diagnóstico del coche?</h3>
+    <p>Sí, es legal y habitual. El diagnóstico electrónico básico suele costar entre 30€ y 80€. Muchos talleres lo descuentan del presupuesto si finalmente realizas la reparación con ellos.</p>
+  </div>
+  <div class="faq-item">
+    <h3>¿Cuánto cuestan los frenos en un taller?</h3>
+    <p>Cambiar pastillas y discos en el eje delantero cuesta entre 150€ y 400€ según el vehículo. Desconfía de precios por debajo de 100€ ya que probablemente se usen piezas de baja calidad.</p>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta cambiar el embrague en España?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El precio medio de cambiar el embrague en España oscila entre 600€ y 1.200€ con piezas originales incluidas. Puede variar según la marca del coche, la zona geográfica y si se usan piezas de recambio o de origen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo sé si un presupuesto de taller es caro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compara el precio con el rango habitual para esa reparación y tu tipo de vehículo. Si supera el límite superior del rango habitual más de un 20%, pide una segunda opinión en otro taller."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta cambiar la correa de distribución?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La correa de distribución tiene un coste habitual de entre 350€ y 900€ dependiendo del modelo. Los coches con cadena de distribución son generalmente más caros de reparar si esta falla."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Me pueden cobrar por el diagnóstico del coche?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, es legal y habitual. El diagnóstico electrónico básico suele costar entre 30€ y 80€. Muchos talleres lo descuentan del presupuesto si finalmente realizas la reparación con ellos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuestan los frenos en un taller?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cambiar pastillas y discos en el eje delantero cuesta entre 150€ y 400€ según el vehículo. El eje trasero suele ser algo más económico. Desconfía de precios por debajo de 100€ ya que probablemente se usen piezas de baja calidad."
+      }
+    }
+  ]
+}
+</script>
+<footer>
+  <p>CocheJusto.es · Tu asesor de taller independiente · Los precios son orientativos basados en medias del mercado español.</p>
+  <p style="margin-top:.5rem"><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/cookies/">Cookies</a> · <a href="/contacto/">Contacto</a></p>
+</footer>
+
+<script>
+  const DB = {
+    embrague:          { min: 600,  max: 1200, label: "cambio de embrague" },
+    distribucion:      { min: 350,  max: 900,  label: "correa / cadena de distribución" },
+    aceite:            { min: 40,   max: 120,  label: "cambio de aceite + filtro" },
+    turbo:             { min: 800,  max: 2500, label: "reparación de turbo" },
+    culata:            { min: 600,  max: 1800, label: "rectificación de culata" },
+    frenos_delanteros: { min: 150,  max: 400,  label: "frenos delanteros" },
+    frenos_traseros:   { min: 120,  max: 350,  label: "frenos traseros" },
+    amortiguadores:    { min: 180,  max: 500,  label: "amortiguadores (par)" },
+    neumaticos:        { min: 250,  max: 700,  label: "neumáticos (4 ud. montados)" },
+    bateria:           { min: 80,   max: 220,  label: "batería" },
+    alternador:        { min: 250,  max: 600,  label: "alternador" },
+    diagnostico:       { min: 30,   max: 80,   label: "diagnóstico electrónico" },
+    aire:              { min: 60,   max: 150,  label: "recarga de aire acondicionado" },
+    itv:               { min: 50,   max: 150,  label: "preparación ITV" },
+  };
+
+  // Multiplicadores por marca detectada en texto libre
+  function getMultiplicador(marcaTexto) {
+    const m = marcaTexto.toLowerCase().trim();
+    const premium = ['bmw','mercedes','audi','porsche','lexus','volvo','land rover','jaguar','maserati','tesla'];
+    const economica = ['dacia','seat','skoda','kia','hyundai','daewoo','lada','suzuki','fiat','renault','peugeot','citroen','opel'];
+    if (premium.some(p => m.includes(p))) return 1.45;
+    if (economica.some(p => m.includes(p))) return 0.85;
+    return 1;
+  }
+
+  function switchTab(tab, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function analizarPresupuesto() {
+    const tipo  = document.getElementById('tipo1').value;
+    const marca = document.getElementById('marca1').value;
+    const precio = parseFloat(document.getElementById('precio1').value);
+    const iva   = document.getElementById('iva1').value;
+
+    if (!tipo)              return alert('Selecciona el tipo de reparación.');
+    if (!precio || precio <= 0) return alert('Introduce el precio del presupuesto.');
+
+    const base = DB[tipo];
+    const mult = getMultiplicador(marca);
+    let precioFinal = iva === 'no' ? precio * 1.21 : precio;
+
+    const minA = Math.round(base.min * mult);
+    const maxA = Math.round(base.max * mult);
+    const margen = (maxA - minA) * 0.15;
+
+    let veredicto, clase, dotClase, cuerpo;
+
+    if (precioFinal < minA - margen) {
+      veredicto = "Precio muy bajo";
+      clase = "orange"; dotClase = "active-orange";
+      cuerpo = `Tu presupuesto de <strong>${fmt(precioFinal)}€</strong> está por debajo del rango habitual (${fmt(minA)}€ – ${fmt(maxA)}€) para un ${base.label}${marcaStr(marca)}. Precios muy bajos pueden indicar piezas de baja calidad. Pregunta qué materiales van a usar.`;
+    } else if (precioFinal <= maxA + margen) {
+      veredicto = "Precio justo";
+      clase = "green"; dotClase = "active-green";
+      cuerpo = `Tu presupuesto de <strong>${fmt(precioFinal)}€</strong> está dentro del rango habitual (${fmt(minA)}€ – ${fmt(maxA)}€) para un ${base.label}${marcaStr(marca)}. El precio es razonable para el mercado español. Puedes aceptarlo o pedir una segunda opinión para confirmar.`;
+    } else {
+      veredicto = "Precio elevado";
+      clase = "red"; dotClase = "active-red";
+      cuerpo = `Tu presupuesto de <strong>${fmt(precioFinal)}€</strong> supera el rango habitual (${fmt(minA)}€ – ${fmt(maxA)}€) para un ${base.label}${marcaStr(marca)}. Te recomendamos pedir una segunda opinión antes de aceptar. La diferencia puede ser significativa.`;
+    }
+
+    const rango  = (maxA + margen) - (minA - margen);
+    const posRel = (precioFinal - (minA - margen)) / rango;
+    const posPct = Math.min(Math.max(posRel * 100, 2), 98);
+
+    document.getElementById('verdict1').textContent = veredicto;
+    document.getElementById('verdict1').className   = 'result-verdict ' + clase;
+    document.getElementById('rbody1').innerHTML     = cuerpo;
+    document.getElementById('lmin1').textContent    = fmt(minA) + '€';
+    document.getElementById('lmax1').textContent    = fmt(maxA) + '€';
+
+    const dot = document.getElementById('dot1');
+    dot.className = 'semaforo-dot ' + dotClase;
+
+    const resultEl = document.getElementById('result1');
+    resultEl.classList.add('visible');
+
+    setTimeout(() => {
+      document.getElementById('rfill1').style.width  = posPct + '%';
+      document.getElementById('rmark1').style.left   = posPct + '%';
+    }, 100);
+
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function analizarIdea() {
+    const tipo  = document.getElementById('tipo2').value;
+    const marca = document.getElementById('marca2').value;
+
+    if (!tipo) return alert('Selecciona el tipo de reparación.');
+
+    const base = DB[tipo];
+    const mult = getMultiplicador(marca);
+    const minA = Math.round(base.min * mult);
+    const maxA = Math.round(base.max * mult);
+
+    const marcaNombre = marca.trim() ? ` para un ${marca.trim()}` : ' en España';
+
+    document.getElementById('rango2').innerHTML =
+      `${fmt(minA)}€ – ${fmt(maxA)}€ <span>precio estimado con IVA</span>`;
+    document.getElementById('detalle2').innerHTML =
+      `Este es el rango habitual para un <strong>${base.label}</strong>${marcaNombre}. El precio final puede variar según la zona, el taller y las piezas utilizadas. Si recibes un presupuesto fuera de este rango, usa la pestaña <em>"Tengo un presupuesto"</em> para analizarlo en detalle.`;
+
+    const resultEl = document.getElementById('result2');
+    resultEl.classList.add('visible');
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function fmt(n) { return Math.round(n).toLocaleString('es-ES'); }
+  function marcaStr(m) { return m.trim() ? ` en un ${m.trim()}` : ''; }
+</script>
+</body>
+</html>
